@@ -38,18 +38,11 @@ datasources:
   access: proxy
   url: http://loki:3100
   editable: true
-  correlations:
-      - targetUID: tempo
-        label: "Tempo traces"
-        description: "Related traces stored in Tempo"
-  uid: loki        
+  uid: loki
   jsonData:
     derivedFields:
-    - datasourceName: Tempo
-      datasourceUid: tempo
-      matcherRegex: traceID=(\w+)
-      name: traceID
-      url: $${__value.raw}
-  secureJsonData:
-    httpHeaderValue1: "tenant1"
-
+    - datasourceUid: tempo
+      matcherRegex: TraceId
+      matcherType: label
+      name: TraceId
+      url: "$${__value.raw}"       
