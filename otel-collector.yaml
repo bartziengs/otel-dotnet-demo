@@ -18,6 +18,18 @@ exporters:
     send_timestamps: true
     metric_expiration: 180m
     enable_open_metrics: true
+  otlphttp/logs:
+      endpoint: "http://loki:3100/otlp"
+      tls:
+        insecure: true    
+
+processors:
+  attributes/empty:
+    actions:
+      - key: "empty"
+        # match empty string
+        pattern: ^\s*$
+        action: delete        
 
 service:
   pipelines:
@@ -26,7 +38,8 @@ service:
       exporters: [otlp,debug]
     logs:
       receivers: [otlp]
-      exporters: [otlp,debug]
+      processors: [attributes/empty]
+      exporters: [otlphttp/logs,debug]
     metrics:
       receivers: [otlp]
       exporters: [prometheus]
