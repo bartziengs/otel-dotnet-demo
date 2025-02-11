@@ -32,6 +32,9 @@ processors:
         action: delete        
 
 service:
+  telemetry:
+      logs:
+      traces:
   pipelines:
     traces:
       receivers: [otlp]
@@ -43,3 +46,4 @@ service:
     metrics:
       receivers: [otlp]
       exporters: [prometheus]
+
