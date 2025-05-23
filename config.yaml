@@ -19,9 +19,12 @@ exporters:
     endpoint: ":9201"
     send_timestamps: true
     metric_expiration: 180m
-
-  azuremonitor:
-    connection_strig: 
+    enable_open_metrics: true
+  otlphttp/logs:
+      endpoint: "http://host.docker.internal:4318/api/OtlpToDcr"
+      tls:
+        insecure: true
+      encoding: json
                   
 
 processors:
@@ -29,10 +32,10 @@ processors:
     log_statements:
       - context: log
         statements:
-          - set(log.observed_time_unix_nano, UnixNano(Time(log.attributes["LogTime"],"%Y-%m-%dT%H:%M:%S.%f")))
-          - set(log.time_unix_nano, UnixNano(Time(log.attributes["LogTime"],"%Y-%m-%dT%H:%M:%S.%f")))
+          - set(log.observed_time_unix_nano, UnixNano(Time(log.attributes["ts"],"%Y-%m-%dT%H:%M:%S.%f")))
+          - set(log.time_unix_nano, UnixNano(Time(log.attributes["ts"],"%Y-%m-%dT%H:%M:%S.%f")))
         conditions:
-         - IsString(attributes["LogTime"])
+         - IsString(attributes["ts"])
   attributes/empty:
     actions:
       - key: "empty"
@@ -51,8 +54,9 @@ service:
       exporters: [otlp,debug,azuremonitor]
     logs:
       receivers: [otlp]
-      processors: [transform/observedtime,attributes/empty]
-      exporters: [otlphttp/logs,debug,azuremonitor,file]
+      processors: [attributes/empty]
+      exporters: [otlphttp/logs,debug]
     metrics:
       receivers: [otlp]
       exporters: [prometheus]
+

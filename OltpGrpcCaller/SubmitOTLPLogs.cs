@@ -9,16 +9,16 @@ using System.Text;
 
 namespace OltpGrpcCaller
 {
-    public class SubmitOTLPWithGrpc
+    public class SubmitOTLPLogs
     {
-        private readonly ILogger<SubmitOTLPWithGrpc> _logger;
+        private readonly ILogger<SubmitOTLPLogs> _logger;
 
-        public SubmitOTLPWithGrpc(ILogger<SubmitOTLPWithGrpc> logger)
+        public SubmitOTLPLogs(ILogger<SubmitOTLPLogs> logger)
         {
             _logger = logger;
         }
 
-        [Function(nameof(SubmitOTLPWithGrpc)]
+        [Function(nameof(SubmitOTLPLogs))]
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");

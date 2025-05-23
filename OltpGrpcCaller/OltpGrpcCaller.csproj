@@ -32,6 +32,9 @@
 		</None>
 	</ItemGroup>
 	<ItemGroup>
+		<Protobuf Include="Protos\trace.proto">
+		  <GrpcServices>Client</GrpcServices>
+		</Protobuf>
 		<Protobuf Include="Protos\logs_service.proto" GrpcServices="Client" />
 		<Protobuf Include="Protos\logs.proto" GrpcServices="Client" />
 		<Protobuf Include="Protos\resource.proto" GrpcServices="Client" />

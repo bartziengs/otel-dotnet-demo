@@ -26,15 +26,16 @@ services:
 
   # And put them in an OTEL collector pipeline...
   otel-collector:
-    image: otel/opentelemetry-collector-contrib:0.119.0
+    image: otel/opentelemetry-collector-contrib:0.126.0
     command: [ "--config=/etc/otel-collector.yaml" ]
     
     volumes:
       - ./otel-collector.yaml:/etc/otel-collector.yaml
+      - ./data/exports.json:/data/exports.json
     ports:
       - "4317:4317"
       - "4318:4318"
-      - "9201:9201"      
+      - "9201:9201"
 
   prometheus:
     image: prom/prometheus:latest

@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "..\ConsoleApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OltpGrpcCaller", "..\OltpGrpcCaller\OltpGrpcCaller.csproj", "{A07B5338-BF01-4B43-85F4-7C39369EE92D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetLogicAppHistory", "..\GetLogicAppHistory\GetLogicAppHistory.csproj", "{FAD646A0-0921-41C7-8B33-12ECA8BB568B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerWithOtelExporter", "..\LoggerWithOtelExporter\LoggerWithOtelExporter.csproj", "{649429C2-FCD2-47BF-BF0B-A3A8C156E734}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogIngestionEndpoint", "..\LogIngestionEndpoint\LogIngestionEndpoint.csproj", "{33AEBE29-A8C3-46EF-AEF8-5609AD4E8811}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{A07B5338-BF01-4B43-85F4-7C39369EE92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A07B5338-BF01-4B43-85F4-7C39369EE92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A07B5338-BF01-4B43-85F4-7C39369EE92D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD646A0-0921-41C7-8B33-12ECA8BB568B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD646A0-0921-41C7-8B33-12ECA8BB568B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD646A0-0921-41C7-8B33-12ECA8BB568B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD646A0-0921-41C7-8B33-12ECA8BB568B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649429C2-FCD2-47BF-BF0B-A3A8C156E734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649429C2-FCD2-47BF-BF0B-A3A8C156E734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649429C2-FCD2-47BF-BF0B-A3A8C156E734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649429C2-FCD2-47BF-BF0B-A3A8C156E734}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33AEBE29-A8C3-46EF-AEF8-5609AD4E8811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33AEBE29-A8C3-46EF-AEF8-5609AD4E8811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33AEBE29-A8C3-46EF-AEF8-5609AD4E8811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33AEBE29-A8C3-46EF-AEF8-5609AD4E8811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
